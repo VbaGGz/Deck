@@ -89,17 +89,17 @@ class Blackjack:
             Player.showPlayer()
 
 
-def play():
-    print("\t        Lets Play Some Blackjack !!!")
-    print("________________________________________________________________")
-    playerCount = input("How many people will be playing? : ")
-    Game = Blackjack(playerCount)
-    for player in Game.Players:
-        Game.dealCard(player)
-    Game.dealCard(Game.Dealer)
-    for player in Game.Players:
-        Game.dealCard(player)
+# def play():
+#     print("\t        Lets Play Some Blackjack !!!")
+#     print("________________________________________________________________")
+#     playerCount = input("How many people will be playing? : ")
+#     Game = Blackjack(playerCount)
+#     for player in Game.Players:
+#         Game.dealCard(player)
+#     Game.dealCard(Game.Dealer)
+#     for player in Game.Players:
+#         Game.dealCard(player)
     
-    for player in Game.Players:
-        print(player.name)
-        player.showHand()
+#     for player in Game.Players:
+#         print(player.name)
+#         player.showHand()
