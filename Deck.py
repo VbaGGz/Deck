@@ -18,11 +18,24 @@ class Card:
     def __init__(self, suit, val) -> None:
         suits = ['♢','♡','♣','♠']
         if (suit in suits and val in range(1,14)):
-            self.suit = suit
-            self.val = val
+            if val == 11:
+                self.suit = suit
+                self.val = "J"
+            elif val == 12:
+                self.suit = suit
+                self.val = "Q"
+            elif val == 13:
+                self.suit = suit
+                self.val = "K"
+            elif val == 1:
+                self.suit = suit
+                self.val = "A"
+            else:    
+                self.suit = suit
+                self.val = val
     
     def printCard(self):
-        if self.val >= 10:
+        if self.val == 10:
             print("------------")
             print("| {}       |".format(self.val))
             print("|          |")
@@ -75,7 +88,7 @@ class Blackjack:
         for card in Player.hand:
             if card.val == 1:
                cardCount += 11 
-            elif card.val in [10,11,12,13]:
+            elif card.val in [10,"J","Q","K"]:
                 cardCount += 10
             else:
                 cardCount += card.val
@@ -103,3 +116,7 @@ class Blackjack:
 #     for player in Game.Players:
 #         print(player.name)
 #         player.showHand()
+
+# MyDeck = Deck()
+
+# MyDeck.showDeck()
